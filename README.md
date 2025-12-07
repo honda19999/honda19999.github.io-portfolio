@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad Ahmed - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3498db;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .skill-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .skill-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .linkedin-link {
+            display: inline-block;
+            background-color: #0077b5;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 1rem 0;
+            transition: background-color 0.3s;
+        }
+
+        .linkedin-link:hover {
+            background-color: #005885;
+        }
+
+        .resume-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .resume-header h3 {
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .resume-contact {
+            margin-top: 0.5rem;
+            color: #666;
+        }
+
+        .resume-item {
+            margin-bottom: 2rem;
+        }
+
+        .resume-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .resume-item .position {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .resume-item .location {
+            float: right;
+            color: #666;
+        }
+
+        .resume-item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .resume-item li {
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .artifact-document {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            border: 1px solid #ddd;
+        }
+
+        .document-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .resume-item .location {
+                float: none;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Saad Syed Iqbal Ahmed</h1>
+            <p class="tagline">Data-Driven Business Analyst | Information Decision Sciences Student</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about" class="nav-link active" onclick="showSection('about')">About Me</a></li>
+            <li><a href="#artifact" class="nav-link" onclick="showSection('artifact')">Writing Project</a></li>
+            <li><a href="#resume" class="nav-link" onclick="showSection('resume')">Resume</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about" class="content-section active">
+            <h2>About Me</h2>
+            
+            <p>As a sophomore at the College of DuPage pursuing a bachelor's degree in Information Decision Sciences with a focus on Accounting, I am preparing for a career as a business analyst where I can leverage data-driven insights to help organizations make strategic decisions. My academic foundation in data management, analytical thinking, and technology systems, combined with practical workplace experience in both healthcare and retail environments, has equipped me with the communication skills and technical proficiency essential for success in this field.</p>
+
+            <p>Throughout my professional journey, I have developed a strong relationship with workplace writing and communication. Currently working as a Pharmacy Technician at Jewel-Osco, I engage in precise documentation of insurance information, patient records, and compliance-related materials that require accuracy, attention to detail, and clear communication with multiple stakeholders. This healthcare environment has taught me the critical importance of regulatory compliance, data accuracy, and effective written communication in high-stakes professional settings. Previously, my experience as a Product Specialist at Target honed my customer service skills and operational documentation abilities, where I regularly communicated with diverse audiences and maintained clear records of inventory and customer interactions.</p>
+
+            <p>My multilingual background—with fluency in English and conversational skills in Arabic and Urdu—enables me to communicate effectively in multicultural work environments, an increasingly valuable asset in today's globalized business landscape. This cultural awareness, combined with my technical skills in Excel (including data analysis, formulas, and pivot tables) and Python (for data manipulation, automation, and basic scripting), positions me to bridge the gap between technical data analysis and clear business communication.</p>
+
+            <p>What distinguishes me as a professional is my practical approach to writing and communication. I view writing not as an abstract exercise but as a powerful tool for sharing important data effectively and driving business outcomes. Whether documenting pharmacy procedures, analyzing business data, or presenting strategic recommendations, I focus on clarity, precision, and audience-appropriate communication. My goal is to become a business analyst who can not only extract meaningful insights from complex datasets but also communicate those findings persuasively to stakeholders at all levels of an organization.</p>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Technical Skills</h4>
+                    <p>Excel (data analysis, formulas, pivot tables), Python (data manipulation, automation), pharmacy management systems, electronic documentation</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Communication</h4>
+                    <p>Professional documentation, multilingual communication (English, Arabic, Urdu), stakeholder engagement, regulatory compliance writing</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Analytical Abilities</h4>
+                    <p>Data-driven decision making, process documentation, insurance claims processing, inventory management, problem-solving</p>
+                </div>
+            </div>
+
+            <p>The portfolio you are viewing represents my growth as a professional communicator and my readiness to enter the business analysis field. Through my coursework in ENGLI-1105 and my workplace experiences, I have developed the ability to write well-structured, persuasive, and clear business documents including reports, proposals, and analytical memos. The artifact included in this portfolio—a comprehensive workplace description of pharmacy operations—demonstrates my ability to conduct research, synthesize complex information, and present findings in a professional format that meets the needs of diverse audiences.</p>
+
+            <p>As I prepare to transition from my current role in pharmacy to a career in business analysis, I bring with me a unique combination of healthcare industry knowledge, data analysis capabilities, and strong written communication skills. I am committed to continuous learning and professional development, always seeking to refine my ability to transform data into actionable insights and communicate those insights effectively to drive organizational success.</p>
+
+            <a href="https://www.linkedin.com/in/saad-syed-iqbal-ahmed-064556327" target="_blank" class="linkedin-link">Connect with me on LinkedIn</a>
+        </section>
+
+        <!-- Writing Project 1 Section -->
+        <section id="artifact" class="content-section">
+            <h2>Writing Project 1: Pharmacy Workplace Description</h2>
+            
+            <h3>Process Statement</h3>
+            <p>This artifact represents a significant milestone in my development as a professional communicator and demonstrates my ability to research, analyze, and document complex workplace environments. For Writing Project 1, I conducted an in-depth interview with Julian, a staff pharmacist with 16 years of experience at Jewel-Osco, to understand the writing practices, communication challenges, and professional requirements within pharmacy settings.</p>
+
+            <p>The purpose of this project was to explore how writing functions in a professional healthcare environment and to understand the various genres, audiences, and regulatory frameworks that shape workplace communication in pharmacy. Through this interview and analysis, I gained critical insights into how professionals in healthcare settings navigate complex documentation requirements, balance efficiency with thoroughness, and adapt their communication styles for different stakeholders including physicians, patients, insurance companies, and regulatory bodies.</p>
+
+            <p>This artifact is particularly relevant to my career preparation as a business analyst because it demonstrates several key competencies that employers value. First, it showcases my research and interviewing skills—I developed thoughtful questions, conducted a comprehensive interview, and synthesized the information into a coherent document. Second, it illustrates my understanding of workplace communication complexity, including the need to adapt writing for different audiences and purposes. Third, it reflects my attention to detail and ability to organize information logically, skills that are essential when analyzing business processes and presenting findings to stakeholders.</p>
+
+            <p>The process of creating this document taught me valuable lessons about professional writing that extend far beyond the pharmacy context. I learned that effective workplace writing requires understanding not just what to communicate, but how to communicate it appropriately for specific audiences and purposes. I discovered that regulatory compliance, time management, and persuasive argumentation are critical components of professional communication across industries. These insights have shaped my approach to business communication and reinforced my commitment to developing clear, purposeful, and audience-centered writing skills.</p>
+
+            <p>What makes this artifact particularly strong is its demonstration of my ability to translate spoken interview responses into a structured, professional document that captures both the technical details and the broader themes of pharmacy practice. The interview script format preserves the authentic voice of the practitioner while organizing the information in a way that makes it accessible and valuable to readers who want to understand this profession. This balance between authenticity and organization reflects the kind of analytical and communication skills I will bring to my future role as a business analyst.</p>
+
+            <p>As you review this artifact, you will notice my attention to professional formatting, clear section organization, and comprehensive coverage of topics ranging from educational requirements to future industry trends. This thoroughness and organizational skill are qualities I will apply to business analysis work, where understanding complex processes and communicating them clearly to diverse stakeholders is essential for success.</p>
+
+            <div class="artifact-document">
+                <div class="document-header">
+                    <h3>Interview Script: Pharmacy Workplace Communication</h3>
+                    <p><strong>Interviewee:</strong> Julian, Staff Pharmacist, Jewel-Osco (16 years experience)</p>
+                    <p><strong>Date:</strong> November 14, 2025</p>
+                </div>
+
+                <h4>1. Background and Experience</h4>
+                <p>Julian is a staff pharmacist at Jewel-Osco with 16 years of professional experience. His primary responsibilities encompass verifying and dispensing prescription medications, providing patient counseling on proper medication use and potential side effects, conducting medication therapy management sessions, administering immunizations, and collaborating with physicians to resolve prescription issues or recommend therapeutic alternatives. Additionally, he oversees pharmacy technicians and ensures the pharmacy complies with all state and federal regulations.</p>
+
+                <h4>2. Education and Training</h4>
+                <p>Julian completed a Doctor of Pharmacy (PharmD) degree, a four-year professional program that he entered after completing two years of prerequisite coursework. During his PharmD program, he took courses that involved significant writing, including pharmacotherapy case studies, drug information responses, and patient counseling documentation. He also completed experiential rotations where he learned to write SOAP notes (Subjective, Objective, Assessment, and Plan), the standard format for clinical documentation. After graduation, he passed the NAPLEX (North American Pharmacist Licensure Examination) and the state law exam to obtain his pharmacy license.</p>
+
+                <h4>3. Types of Writing</h4>
+                <p>The documents Julian creates most frequently include prescription verification notes in the electronic health record system, patient consultation documentation, immunization records, medication therapy management reports, and prior authorization requests for insurance companies. He also writes incident reports when medication errors occur or are narrowly avoided, communication logs when contacting prescribers about drug interactions or dosing concerns, and occasionally responses to customer complaint letters or corporate quality assurance inquiries.</p>
+
+                <h4>4. Writing Frequency</h4>
+                <p>Julian estimates that approximately 40-50% of his workday involves some form of writing or documentation. Prescription verification requires brief notes about why he approved or questioned an order. Patient counseling sessions require documentation to protect both the patient and the pharmacy legally. The writing he does least often includes formal letters or lengthy reports—most of his writing is brief, clinical, and focused on essential information that other healthcare providers or insurance companies need to make decisions.</p>
+
+                <h4>5. Communication Methods</h4>
+                <p>Written documents are just one component of communication in pharmacy practice. Julian regularly makes phone calls to physicians' offices to clarify prescriptions, discuss drug interactions, or recommend therapeutic alternatives. He has face-to-face conversations with patients daily to counsel them on medication use and answer their questions. He also uses secure electronic messaging systems to communicate with prescribers through the e-prescribing platform. Additionally, he communicates with insurance companies through online portals and by phone to resolve coverage issues. Team communication with pharmacy technicians happens constantly throughout the day, both verbally and through the pharmacy management system's messaging features.</p>
+
+                <h4>6. Developing Writing Proficiency</h4>
+                <p>Julian's writing proficiency developed through a combination of formal education and on-the-job experience. In pharmacy school, students practice writing SOAP notes, drug information responses, and patient case presentations. However, the practical, day-to-day writing—such as prior authorization justifications and prescription clarification notes—is learned primarily on the job during the first year of practice. Preceptors during rotations demonstrate how to write efficiently and effectively, focusing on clarity and including only relevant clinical information. Julian has also learned that different audiences require different writing styles: notes to physicians need clinical terminology, while patient education materials must be written in plain language.</p>
+
+                <h4>7. Writing Standards and Regulations</h4>
+                <p>Pharmacy writing is heavily regulated. HIPAA governs how pharmacists document and share patient information, requiring extreme care about privacy and security in all written communication. State boards of pharmacy have specific documentation requirements for certain activities, such as immunizations and medication therapy management services. Insurance companies have their own documentation standards for prior authorizations and appeals. The Joint Commission and other accrediting bodies have standards for medication error reporting and quality improvement documentation. These regulations mean pharmacists cannot write in whatever format they prefer—they must follow specific protocols, use approved forms, and include certain required elements in their documentation.</p>
+
+                <h4>8. Challenges in Professional Writing</h4>
+                <p>One of Julian's biggest challenges is writing prior authorization justifications that are detailed enough to satisfy insurance companies but can be completed quickly while handling many patients throughout the day. Insurance companies often deny medications for reasons that don't make clinical sense, requiring persuasive, evidence-based arguments for why a particular medication is medically necessary. Another challenge is documenting thoroughly enough for legal protection without spending so much time on documentation that patient care suffers. Time management is crucial—comprehensive yet efficient documentation is essential. Early in his career, Julian struggled with knowing how much detail to include in notes to prescribers; he learned that being concise and focusing on the key clinical issue gets better results than writing lengthy explanations.</p>
+
+                <h4>9. Technology and Tools</h4>
+                <p>Julian uses several software systems daily. The primary pharmacy management system processes prescriptions and has built-in documentation fields for notes and communication logs. An electronic prior authorization platform submits requests to insurance companies—most of this is now template-based, making the process faster. For immunizations, documentation occurs in both the pharmacy system and the state immunization registry. Secure fax and electronic prescribing systems facilitate communication with physician offices. These technologies have significantly changed pharmacy practice; when Julian started, much more paper-based documentation and phone communication occurred. Now, electronic systems allow for faster communication, but they have also increased documentation requirements because everything is tracked and auditable.</p>
+
+                <h4>10. Career Outlook and Advice</h4>
+                <p>The job outlook for pharmacy has become more challenging over the past few years. The market has become saturated in many areas due to an increase in pharmacy schools and graduates, while retail pharmacy positions have decreased due to store closures and staffing cuts. However, pharmacists with strong clinical skills and the ability to communicate effectively—both in writing and verbally—still have good opportunities, especially in hospital settings, specialty pharmacy, managed care, and ambulatory care clinics. Julian's advice for someone entering pharmacy is to take writing and communication courses seriously. The technical knowledge is essential, but the ability to communicate clearly with patients, physicians, and insurance companies sets professionals apart. He emphasizes the importance of documenting everything thoroughly, developing persuasive writing skills for prior authorizations and appeals, and learning to write efficiently without sacrificing quality or compliance.</p>
+
+                <h4>11. Collaboration and Team Communication</h4>
+                <p>Julian collaborates with physicians, nurses, and other healthcare providers regularly through written communication. When he identifies a potential drug interaction, he sends a fax or electronic message to the prescriber's office explaining the clinical concern and suggesting alternatives. For complex patients, especially those with multiple chronic conditions, he sometimes writes comprehensive medication therapy management reports that summarize all the patient's medications, identify potential problems, and recommend interventions. These reports are sent to the patient's primary care physician. He also participates in medication reconciliation efforts with hospital discharge planners, exchanging written information about patients' medication regimens to prevent errors during care transitions. Within the pharmacy team, shared documentation systems track ongoing issues, patient concerns, and workflow challenges.</p>
+
+                <h4>12. Future Trends</h4>
+                <p>Julian identifies several trends shaping the future of pharmacy writing and communication. Telepharmacy and remote patient monitoring are expanding, meaning more communication with patients will occur through secure messaging platforms and video consultations—requiring different documentation approaches. Interoperability between healthcare systems is improving, so pharmacists will have better access to complete patient records, but this also means documentation will be visible to more healthcare providers, raising the stakes for clear, professional writing. There will also be increased emphasis on population health management, requiring pharmacists to analyze data and write reports about medication use trends and outcomes for groups of patients rather than just individual patient care. Pharmacists who can adapt their communication skills to these evolving technologies and practice models will be most successful.</p>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="content-section">
+            <h2>Resume</h2>
+            
+            <div class="resume-section">
+                <div class="resume-header">
+                    <h3>SAAD SYED IQBAL AHMED</h3>
+                    <div class="resume-contact">
+                        Glen Ellyn, IL | (630) 530-0605 | saadahmedh99@gmail.com<br>
+                        <a href="https://www.linkedin.com/in/saad-syed-iqbal-ahmed-064556327" target="_blank">LinkedIn Profile</a>
+                    </div>
+                </div>
+
+                <div class="resume-item">
+                    <h4>EDUCATION</h4>
+                    <div>
+                        <strong>College of DuPage</strong> <span class="location">Glen Ellyn, IL</span><br>
+                        Information Decision Sciences / Accounting, GPA: 3.2 <span class="location">August 2023 - May 2025</span>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <strong>Willowbrook High School</strong> <span class="location">Villa Park, IL</span><br>
+                        High School Diploma, GPA: 3.1 <span class="location">August 2019 - May 2023</span><br>
+                        <em>Activities: Ping Pong Club, Wrestling (2 years), Muslim Student Association, Auto Class (2 years)</em>
+                    </div>
+                </div>
+
+                <div class="resume-item">
+                    <h4>PROFESSIONAL EXPERIENCE</h4>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <strong>Jewel-Osco</strong> <span class="location">Westmont, IL</span><br>
+                        <span class="position">Pharmacy Technician</span> <span class="location">April 2025 - Present</span>
+                        <ul>
+                            <li>Prepared and dispensed prescription medications under pharmacist supervision</li>
+                            <li>Processed insurance claims and verified patient information for 100+ prescriptions daily</li>
+                            <li>Managed inventory by labeling, stocking, and organizing medications to ensure accuracy</li>
+                            <li>Addressed customer questions, improving service efficiency and satisfaction</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <strong>Target</strong> <span class="location">Lombard, IL</span><br>
+                        <span class="position">Product Specialist</span> <span class="location">March 2022 - December 2024</span>
+                        <ul>
+                            <li>Serviced over 100 customers per shift in finding products suited to their needs</li>
+                            <li>Resolved more than 30 customer issues weekly, increasing satisfaction ratings</li>
+                            <li>Maintained visual displays and restocked 50+ shelves to enhance shopping appeal</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong>Portillo's</strong> <span class="location">Villa Park, IL</span><br>
+                        <span class="position">Cashier / Fry Cook</span> <span class="location">June 2021 - February 2022</span>
+                        <ul>
+                            <li>Processed customer orders and handled payments quickly and accurately</li>
+                            <li>Prepared food and beverages while maintaining quality and safety standards</li>
+                            <li>Cleaned and organized dining areas to support efficient operations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="resume-item">
+                    <h4>TECHNOLOGY SKILLS</h4>
+                    <ul>
+                        <li>Moderate experience with Excel, including data analysis, formulas, and pivot tables</li>
+                        <li>Experienced in Python for data manipulation, automation, and basic scripting</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h4>ADDITIONAL INFORMATION</h4>
+                    <ul>
+                        <li>Operate an online store selling second-hand clothing at local events</li>
+                        <li>Languages: English (fluent), Arabic (conversational), Urdu (conversational)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Saad Syed Iqbal Ahmed. All rights reserved.</p>
+        <p>Portfolio created for ENGLI-1105 Writing Project 3</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
